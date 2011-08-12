@@ -1,0 +1,32 @@
+h1. P&T Switch: Checkbox Toggle
+
+This fieldtype uses "Pixel & Tonic's P&T Switch":http://pixelandtonic.com/divebar fieldtype as a base and extends it to allow the same UI for toggling a given checkbox in a Publish/Edit form. You just need to know the input name of the checkbox and setup the field settings accordingly.
+
+*Purpose*
+
+I built this so we could use the P&T Switch UI on the "Allow Comments" field and "Entry is Sticky" field in publish forms. The goal was a more consistent UI for the content managers.
+
+
+h2. Compatibility
+
+Only tested on EE 2.2.2 with P&T Switch 1.0.4
+
+
+h2. Installation
+
+* Move the @pt_switch_checkbox_toggle@ folder into your @expressionengine/third_party@ folder
+* Go to Fieldtypes &rarr; P&T Switch: Checkbox Toggle &rarr; Install
+
+
+h2. Setup
+
+Create a new custom field and select the P&T Switch: Checkbox Toggle fieldtype. Visually this will be no different from the standard P&T Switch fieldtype on the Publish/Edit form.
+
+In your fieldtype settings be sure to enter the name of the checkbox input. An example would be @allow_comments@ to use the P&T Switch UI for ExpressionEngine's native "Allow Comments" form checkbox.
+
+
+h2. What it does
+
+This fieldtype allows you to define which input to select. It hides that input's label on the Publish/Edit page and using javascript to update the input's "checked" attribute when the P&T Switch UI is used. It also runs a small check to see if it's in the correct state.
+
+Technically you end up with 2 fields containing similar data. In the example above, you will have a custom field with a value of 'y' along with EE's native @allow_comments@ field set to @TRUE@.
